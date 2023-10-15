@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% block title%}Post List{%endblock %}
+{% block content %}
+    {% for post in posts%}
+        <h2>
+            <a href="{% url "blog:post_detail" post.id %} ">{{post.title}}</a>
+        </h2>
+        <p>{{post.description | truncatewords:4}}</p>
+    {% endfor %}
+{%endblock %}
