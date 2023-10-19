@@ -1,8 +1,9 @@
 {% extends "base/base.html" %}
+{% load jformat%}
 {% block title%}Post Detail{%endblock %}
 {%block content%}
     <h3>{{post.title}} by ({{post.author}})</h3>
     <p>{{post.description | linebreaks}}</p>
     <hr>
-    <p>{{post.publish}}</p>
+    <p>{{post.publish|jformat:'%Y/%m/%d-%H:%M'}}</p>
 {%endblock %}
